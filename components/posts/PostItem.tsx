@@ -6,6 +6,7 @@ import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
 import { AiOutlineHeart, AiOutlineMessage, AiFillHeart } from "react-icons/ai";
 import useLike from "@/hooks/useLike";
+import { MdVerified } from "react-icons/md";
 
 interface PostItemProps {
     data: Record<string, any>;
@@ -65,10 +66,9 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
         <div className="flex flex-row items-start gap-3">
             <Avatar userId={data.user.id} />
             <div>
-                <div className="flex flex-row items-center gap-2">
+                <div className="flex flex-row items-center gap-1">
                     <p onClick={goToUser} className="text-white font-semibold cursor-pointer hover:underline">{data.user.name}</p>
-                    <span onClick={goToUser} className="text-neutral-500 cursor-pointer hover:underline hidden md:block">@{data.user.username}</span>
-                    <span className="text-neutral-500 text-sm">{createdAt} ago</span>
+                    <span onClick={goToUser} className="text-neutral-500 cursor-pointer hover:underline hidden md:block">@{data.user.username}</span> <span>{data.user.isVerified && <MdVerified size={18} color="#1D9BF0" />}</span>
                 </div>
                 <div className="text-white mt-1">
                     {data.body}
@@ -82,6 +82,7 @@ const PostItem: React.FC<PostItemProps> = ({ data, userId }) => {
                         <LikeIcon size={20} color={hasLiked ? 'red' : ''} />
                         <p>{data.likedIds.length}</p>
                     </div>
+                    <span className="text-neutral-500 text-sm">{createdAt} ago</span>
                 </div>
             </div>
         </div>

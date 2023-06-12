@@ -2,6 +2,7 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import Avatar from "../Avatar";
+import { MdVerified } from "react-icons/md";
 
 interface CommentItemProps {
     data: Record<string, any>;
@@ -48,6 +49,9 @@ const CommentItem: React.FC<CommentItemProps> = ({ data }) => {
                 hover:underline
             ">
               {data.user.name}
+            </p>
+            <p>
+              {data.user.isVerified && <MdVerified size={18} color="#1D9BF0" />}
             </p>
             <span 
               onClick={goToUser} 

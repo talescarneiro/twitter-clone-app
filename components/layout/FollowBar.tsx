@@ -1,5 +1,6 @@
 import useUsers from "@/hooks/useUsers"
 import Avatar from "../Avatar";
+import { MdVerified } from "react-icons/md";
 
 const FollowBar = () => {
   const { data: users = [] } = useUsers()
@@ -17,7 +18,10 @@ const FollowBar = () => {
                   <div key={user.id} className="flex flex-row gap-4">
                     <Avatar userId={user.id}/>
                     <div className="flex flex-col">
-                      <p className="text-white font-semibold text-sm">{user.name}</p>
+                      <div className="flex flex-row gap-1">
+                        <p className="text-white font-semibold text-sm">{user.name}</p>
+                        <p>{user.isVerified && <MdVerified size={18} color="#1D9BF0" />}</p>
+                      </div>
                       <p className="text-neutral-400 text-sm">@{user.username}</p>
                     </div>
                   </div>

@@ -48,7 +48,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
                         {fetchedUser?.name}
                     </p>
                     <p className="mt-1">
-                        {fetchedUser?.username === 'tales' && <MdVerified size={22} color="#1D9BF0" />}
+                        {fetchedUser?.isVerified && <MdVerified size={22} color="#1D9BF0" />}
                     </p>
                 </div>
                 <p className="text-md text-neutral-500">
