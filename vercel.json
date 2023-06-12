@@ -1,0 +1,25 @@
+{
+    "builds": [
+      {
+        "src": "next.config.js",
+        "use": "@vercel/next"
+      }
+    ],
+    "version": 2,
+    "env": {
+      "PRISMA_GENERATE_ON_PRE_BUILD": "true"
+    },
+    "build": {
+      "env": {
+        "PRISMA_FORCE_NAPI": "true"
+      },
+      "commands": [
+        {
+          "command": "npm install -g prisma && prisma generate"
+        },
+        {
+          "command": "next build"
+        }
+      ]
+    }
+  }
