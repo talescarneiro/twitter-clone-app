@@ -1,63 +1,71 @@
-# Build and Deploy: TWITTER clone with React, Tailwind, Next, Prisma, Mongo, NextAuth & Vercel (2023)
+# Twitter Clone
 
-![Fullstack Twitter Clone (2)](https://user-images.githubusercontent.com/23248726/224405420-03112a76-250a-4283-992c-60e235170678.png)
+This project is a full-stack Twitter clone developed exclusively for educational purposes. It aims to replicate the core features and functionality of the popular social media platform, Twitter. Built using Next.js, a React framework known for its performance and scalability, this project provides a seamless and interactive user experience.
 
+## Demo
 
-This is a repository for a FullStack Twitter clone tutorial using React, NextJS, TailwindCSS & Prisma.
-
-[VIDEO TUTORIAL](https://www.youtube.com/watch?v=ytkG7RT6SvU)
-
-[DOCKER VERSION by mandeepsingh10](https://github.com/mandeepsingh10/chwitter)
-
-We are going to learn funcionalities such as:
-
-- Authentication system
-- Notification system
-- Image Upload using Base64 strings
-- Prisma ORM with MongoDB
-- Responsive Layout
-- 1 To Many Relations (User - Post)
-- Many To Many Relations (Post - Comment)
-- Following functionality
-- Comments / Replies
-- Likes functionality
-- Vercel Deployment
-
-### Prerequisites
-
-**Node version 14.x**
-
-### Cloning the repository
-
-```shell
-git clone https://github.com/AntonioErdeljac/twitter-clone.git
+```
+https://
 ```
 
-### Install packages
+## Technologies Used
 
-```shell
-npm i
+**Typescript:** The project is developed using TypeScript, a statically typed superset of JavaScript that enhances tooling and provides type safety.
+
+**NextAuth:** NextAuth is utilized for authentication, making it easy to implement secure user authentication flows in the project.
+
+**Node.js:** Node.js is used as the backend runtime environment, allowing server-side JavaScript execution and providing a scalable and efficient server foundation.
+
+**Next.js:** Next.js, a framework built on top of React, is used for server-side rendering (SSR) and creating optimized web applications.
+
+**React.js:** The UI components are built using React.js, a popular JavaScript library for building user interfaces.
+
+**Axios:** Axios is used as an HTTP client for making API requests to external services and fetching data.
+
+**MongoDB:** MongoDB is a powerful NoSQL database with a flexible schema, JSON-like data format, and high scalability, making it suitable for modern web applications.
+
+**Prisma:** Prisma is utilized as an ORM (Object-Relational Mapping) tool, providing a type-safe and database-agnostic query interface for seamless integration with databases.
+
+## Prerequisites
+
+```
+- Node.js (version 14.x)
 ```
 
-### Setup .env file
+Make sure you have Node.js installed by running the following command in the terminal:
+```
+node --version
+```
 
+## Cloning the repository
 
-```js
+```
+git clone git@github.com:talescarneiro/twitter-clone-app.git
+```
+
+## Install packages
+
+```
+npm install
+```
+
+## Setup .env file
+
+```
 DATABASE_URL=
+
 NEXTAUTH_JWT_SECRET=
 NEXTAUTH_SECRET=
 ```
 
-### Start the app
+## Setup Prisma
 
-```shell
-npm run dev
+```
+npx prisma db push
 ```
 
-## Available commands
+## Run the application
 
-Running commands with npm `npm run [command]`
-
-| command         | description                              |
-| :-------------- | :--------------------------------------- |
-| `dev`           | Starts a development instance of the app |
+```
+npm run dev
+```
